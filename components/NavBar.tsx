@@ -54,10 +54,10 @@ export default function NavBar() {
   }
 
   const navItems = [
-    { name: "About", href: "/about" },
     { name: "Features", href: "features", isScroll: true },
     { name: "Pricing", href: "pricing", isScroll: true },
     { name: "FAQ", href: "faq", isScroll: true },
+    { name: "About", href: "/about" },
   ]
 
   const handleNavigation = (href: string) => {
