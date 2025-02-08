@@ -3,6 +3,7 @@ import { Metadata } from "next"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import "./globals.css"
+import { ClerkProvider } from "@clerk/nextjs"
 
 // export const metadata: Metadata = {
 //   title:
@@ -55,14 +56,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-900 text-white">
-        <div className="min-h-screen">
-          <NavBar />
-          <main>{children}</main>
-          <Footer />
-        </div>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className="bg-gray-900 text-white">
+          <div className="min-h-screen">
+            <NavBar />
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

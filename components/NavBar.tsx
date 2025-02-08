@@ -4,8 +4,9 @@ import type React from "react"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
 import { Link as ScrollLink } from "react-scroll"
-import { Menu, Heart } from "lucide-react"
+import { Menu, Heart, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/nextjs"
 import {
   Sheet,
   SheetContent,
@@ -13,12 +14,17 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { useAuth } from "@clerk/nextjs"
+import { useUser } from "@clerk/nextjs"
 
-const NavBar = () => {
+export default function NavBar() {
   const router = useRouter()
   const pathname = usePathname()
   const isHome = pathname === "/"
+  const [isSheetOpen, setIsSheetOpen] = useState(false)
+  const { isLoaded } = useAuth()
+  const { user } = useUser()
 
   useEffect(() => {
     // Check if there's a hash in the URL when we land on the home page
@@ -117,12 +123,34 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex space-x-4 items-center">
               {navItems.map((item) => renderNavLink(item))}
+              <div className="w-[100px]">
+                {isLoaded && (
+                  <>
+                    <SignedOut>
+                      <SignInButton mode="modal" forceRedirectUrl={pathname}>
+                        <Button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-200">
+                          Sign In/Up
+                        </Button>
+                      </SignInButton>
+                    </SignedOut>
+                    <SignedIn>
+                      <UserButton
+                        appearance={{
+                          elements: {
+                            avatarBox: "w-8 h-8",
+                          },
+                        }}
+                      />
+                    </SignedIn>
+                  </>
+                )}
+              </div>
             </div>
           </div>
           <div className="md:hidden">
-            <Sheet>
+            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
                 <Button
                   variant="ghost"
@@ -172,6 +200,48 @@ const NavBar = () => {
                       </Link>
                     )
                   )}
+                  <div className="pt-4 w-full">
+                    {!isLoaded ? (
+                      user ? (
+                        <div className="w-8 h-8 rounded-full bg-gray-700 animate-pulse" />
+                      ) : (
+                        <Button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-200 w-full justify-start opacity-50">
+                          Sign In
+                        </Button>
+                      )
+                    ) : (
+                      <>
+                        <SignedOut>
+                          <SignInButton
+                            mode="modal"
+                            forceRedirectUrl={pathname}
+                          >
+                            <Button
+                              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-200 w-full justify-start"
+                              onClick={() => setIsSheetOpen(false)}
+                            >
+                              Sign In
+                            </Button>
+                          </SignInButton>
+                        </SignedOut>
+                        <SignedIn>
+                          <UserButton
+                            appearance={{
+                              elements: {
+                                avatarBox: "w-8 h-8",
+                                userButtonPopoverCard: {
+                                  pointerEvents: "initial",
+                                },
+                              },
+                            }}
+                            fallback={
+                              <User className="h-8 w-8 text-gray-400" />
+                            }
+                          />
+                        </SignedIn>
+                      </>
+                    )}
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
@@ -181,5 +251,3 @@ const NavBar = () => {
     </nav>
   )
 }
-
-export default NavBar
