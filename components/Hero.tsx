@@ -1,16 +1,11 @@
-"use client"
-
 import type React from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import useAnimatedBackground from "../hooks/useAnimatedBackground"
-
+import AnimatedBackground from "./AnimatedBackground"
 const Hero = () => {
-  const canvasRef = useAnimatedBackground()
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden lg:pt-0 pt-16">
-      <canvas ref={canvasRef} className="absolute inset-0" />
+      <AnimatedBackground />
       <div className="relative z-10 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8">

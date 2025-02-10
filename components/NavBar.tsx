@@ -6,7 +6,6 @@ import { useRouter, usePathname } from "next/navigation"
 import { Link as ScrollLink } from "react-scroll"
 import { Menu, Heart, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/nextjs"
 import {
   Sheet,
   SheetContent,
@@ -15,16 +14,20 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { useEffect, useState } from "react"
-import { useAuth } from "@clerk/nextjs"
-import { useUser } from "@clerk/nextjs"
+import {
+  SignedIn,
+  SignedOut,
+  UserButton,
+  SignInButton,
+  useUser,
+} from "@clerk/nextjs"
 
 export default function NavBar() {
   const router = useRouter()
   const pathname = usePathname()
   const isHome = pathname === "/"
   const [isSheetOpen, setIsSheetOpen] = useState(false)
-  const { isLoaded } = useAuth()
-  const { user } = useUser()
+  const { user, isLoaded } = useUser()
 
   useEffect(() => {
     // Check if there's a hash in the URL when we land on the home page
@@ -129,7 +132,10 @@ export default function NavBar() {
                 {isLoaded && (
                   <>
                     <SignedOut>
-                      <SignInButton mode="modal" forceRedirectUrl={pathname}>
+                      <SignInButton
+                        mode="modal"
+                        forceRedirectUrl={isHome ? "/features" : pathname}
+                      >
                         <Button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-200">
                           Sign In/Up
                         </Button>
@@ -214,7 +220,7 @@ export default function NavBar() {
                         <SignedOut>
                           <SignInButton
                             mode="modal"
-                            forceRedirectUrl={pathname}
+                            forceRedirectUrl={isHome ? "/features" : pathname}
                           >
                             <Button
                               className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-200 w-full justify-start"
