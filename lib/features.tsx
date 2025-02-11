@@ -22,6 +22,7 @@ export const FEATURES = [
     ctaText: "Explore Ideas",
     isPremium: false,
     iconColor: "text-green-400",
+    href: "/features/date-ideas",
   },
   {
     icon: <Film className="w-full h-full" />,
@@ -31,6 +32,7 @@ export const FEATURES = [
     ctaText: "Find Shows",
     isPremium: false,
     iconColor: "text-red-400",
+    href: "/features/movie-show-recommendations",
   },
   {
     icon: <Gamepad2 className="w-full h-full" />,
@@ -40,15 +42,17 @@ export const FEATURES = [
     ctaText: "Play Now",
     isPremium: false,
     iconColor: "text-purple-400",
+    href: "/features/games",
   },
   {
     icon: <Clock className="w-full h-full" />,
-    title: "Time Zone & Schedule Syncing",
+    title: "Schedule Syncing",
     description:
       "Automatically sync schedules to find the best times to connect.",
     ctaText: "Sync Now",
     isPremium: false,
     iconColor: "text-yellow-400",
+    href: "/features/schedule-syncing",
   },
   {
     icon: <MessageCircle className="w-full h-full" />,
@@ -58,6 +62,7 @@ export const FEATURES = [
     ctaText: "Chat Now",
     isPremium: true,
     iconColor: "text-blue-400",
+    href: "/features/chat",
   },
   {
     icon: <Gift className="w-full h-full" />,
@@ -67,6 +72,7 @@ export const FEATURES = [
     ctaText: "Find Gifts",
     isPremium: true,
     iconColor: "text-pink-400",
+    href: "/features/gift-finder",
   },
   {
     icon: <Heart className="w-full h-full" />,
@@ -76,6 +82,7 @@ export const FEATURES = [
     ctaText: "Write Now",
     isPremium: true,
     iconColor: "text-red-500",
+    href: "/features/love-letter-generator",
   },
   {
     icon: <Music className="w-full h-full" />,
@@ -85,6 +92,7 @@ export const FEATURES = [
     ctaText: "Make Playlist",
     isPremium: true,
     iconColor: "text-indigo-400",
+    href: "/features/playlist-creator",
   },
   {
     icon: <Sparkles className="w-full h-full" />,
@@ -94,6 +102,7 @@ export const FEATURES = [
     ctaText: "Get Inspired",
     isPremium: true,
     iconColor: "text-yellow-500",
+    href: "/features/surprise-challenge-generator",
   },
   {
     icon: <Globe className="w-full h-full" />,
@@ -103,6 +112,7 @@ export const FEATURES = [
     ctaText: "Start Exploring",
     isPremium: true,
     iconColor: "text-green-500",
+    href: "/features/virtual-travel-experiences",
   },
   {
     icon: <Book className="w-full h-full" />,
@@ -112,6 +122,7 @@ export const FEATURES = [
     ctaText: "Start Writing",
     isPremium: true,
     iconColor: "text-blue-500",
+    href: "/features/shared-journal-daily-prompts",
   },
   {
     icon: <Zap className="w-full h-full" />,
@@ -121,5 +132,6 @@ export const FEATURES = [
     ctaText: "Create Timeline",
     isPremium: true,
     iconColor: "text-purple-500",
+    href: "/features/countdown-memory-sharing",
   },
 ]

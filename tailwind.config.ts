@@ -1,6 +1,19 @@
 import type { Config } from "tailwindcss";
 
 export default {
+	safelist: [
+		'text-red-400',
+		'text-purple-400',
+		'text-yellow-400',
+		'text-blue-400',
+		'text-pink-400',
+		'text-red-500',
+		'text-indigo-400',
+		'text-yellow-500',
+		'text-green-500',
+		'text-blue-500',
+		'text-purple-500'
+	  ],
     darkMode: ["class"],
     content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",

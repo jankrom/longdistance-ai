@@ -1,6 +1,6 @@
 import type React from "react"
 import Hero from "../components/Hero"
-import FeatureGrid from "../components/FeatureGrid"
+import FeatureGrid from "../components/features/FeatureGrid"
 import PricingSection from "../components/PricingSection"
 import FAQSection from "../components/FAQSection"
 

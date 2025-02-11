@@ -1,6 +1,6 @@
 import type React from "react"
-import FeatureCard from "./FeatureCard"
-import { FEATURES } from "../lib/features"
+import FeatureCard from "@/components/features/FeatureCard"
+import { FEATURES } from "@/lib/features"
 
 const features = FEATURES
 
