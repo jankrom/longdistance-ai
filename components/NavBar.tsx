@@ -135,6 +135,9 @@ export default function NavBar() {
                       <SignInButton
                         mode="modal"
                         forceRedirectUrl={isHome ? "/features" : pathname}
+                        signUpFallbackRedirectUrl={
+                          isHome ? "/features" : pathname
+                        }
                       >
                         <Button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-200">
                           Sign In/Up
@@ -221,6 +224,9 @@ export default function NavBar() {
                           <SignInButton
                             mode="modal"
                             forceRedirectUrl={isHome ? "/features" : pathname}
+                            signUpFallbackRedirectUrl={
+                              isHome ? "/features" : pathname
+                            }
                           >
                             <Button
                               className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-200 w-full justify-start"
