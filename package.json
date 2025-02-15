@@ -10,14 +10,17 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.11.1",
+    "@prisma/client": "^6.3.1",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-slot": "^1.1.1",
+    "cjs-loader": "^0.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.3.1",
     "lucide-react": "^0.474.0",
     "next": "15.1.6",
+    "prisma": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scroll": "^1.9.0",
@@ -36,5 +39,8 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
+  },
+  "prisma": {
+    "schema": "lib/db/prisma/schema.prisma"
   }
 }

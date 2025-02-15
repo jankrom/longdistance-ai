@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import * as tailwindAnimate from "tailwindcss-animate"
+
 
 export default {
 	safelist: [
@@ -93,5 +95,5 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindAnimate],
 } satisfies Config;

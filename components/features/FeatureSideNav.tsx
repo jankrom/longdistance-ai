@@ -62,7 +62,7 @@ export default function FeatureSideNav() {
             </span>
             {feature.isPremium && (
               <Badge
-              
+
                 className={`ml-auto hidden ${
                   isExpanded ? "sm:inline" : "sm:hidden"
                 } lg:inline bg-yellow-500 text-gray-900 text-xs transform transition-all duration-200 ease-in-out ${
