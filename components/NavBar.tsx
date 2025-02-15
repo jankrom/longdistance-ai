@@ -21,6 +21,7 @@ import {
   SignInButton,
   useUser,
 } from "@clerk/nextjs"
+import Image from "next/image"
 
 export default function NavBar() {
   const router = useRouter()
@@ -114,21 +115,24 @@ export default function NavBar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" onClick={handleLogoClick} className="flex-shrink-0">
-              <span className="flex items-center text-xl font-bold text-white">
-                <Heart className="h-6 w-6 text-blue-500 mr-2" />
-                LongDistance AI
-              </span>
-            </Link>
-          </div>
+          <Link href="/" onClick={handleLogoClick} className="flex-shrink-0">
+            <span className="flex items-center text-xl font-bold text-white">
+              <Image
+                src="/logo.svg"
+                alt="Logo"
+                width={350}
+                height={200}
+                className="w-[250px] sm:w-[250px] md:w-[300px] lg:w-[350px]"
+              />
+            </span>
+          </Link>
           <div className="hidden md:block">
             <div className="ml-10 flex space-x-4 items-center">
               {navItems.map((item) => renderNavLink(item))}
-              <div className="w-[100px]">
+              <div className="w-[100px] flex items-center">
                 {isLoaded && (
                   <>
                     <SignedOut>
@@ -229,7 +233,7 @@ export default function NavBar() {
                             }
                           >
                             <Button
-                              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-200 w-full justify-start"
+                              className="px-3 bg-gradient-to-r text-base font-medium  from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-200 w-full justify-start"
                               onClick={() => setIsSheetOpen(false)}
                             >
                               Sign In
@@ -237,19 +241,21 @@ export default function NavBar() {
                           </SignInButton>
                         </SignedOut>
                         <SignedIn>
-                          <UserButton
-                            appearance={{
-                              elements: {
-                                avatarBox: "w-8 h-8",
-                                userButtonPopoverCard: {
-                                  pointerEvents: "initial",
+                          <div className="px-2">
+                            <UserButton
+                              appearance={{
+                                elements: {
+                                  avatarBox: "w-8 h-8",
+                                  userButtonPopoverCard: {
+                                    pointerEvents: "initial",
+                                  },
                                 },
-                              },
-                            }}
-                            fallback={
-                              <User className="h-8 w-8 text-gray-400" />
-                            }
-                          />
+                              }}
+                              fallback={
+                                <User className="h-8 w-8 text-gray-400" />
+                              }
+                            />
+                          </div>
                         </SignedIn>
                       </>
                     )}

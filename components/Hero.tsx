@@ -25,7 +25,7 @@ const Hero = () => {
             <div className="grid grid-cols-2 gap-4 w-full max-w-md lg:w-1/2">
               <Image
                 src="/images/img1.png"
-                alt="Couple video chatting"
+                alt="Couple hugging through the computer"
                 width={300}
                 height={300}
                 className="rounded-lg shadow-lg w-full h-auto object-cover aspect-square"
@@ -33,7 +33,7 @@ const Hero = () => {
               />
               <Image
                 src="/images/img2.jpg"
-                alt="Couple sharing virtual experiences"
+                alt="Couple talking through the computer"
                 width={300}
                 height={300}
                 className="rounded-lg shadow-lg w-full h-auto object-cover aspect-square"
@@ -41,14 +41,14 @@ const Hero = () => {
               />
               <Image
                 src="/images/img3.jpg"
-                alt="AI-powered date ideas"
+                alt="Couple sharing a flower through a phone"
                 width={300}
                 height={300}
                 className="rounded-lg shadow-lg w-full h-auto object-cover aspect-square"
               />
               <Image
                 src="/images/img4.jpg"
-                alt="Couple using LongDistance AI app"
+                alt="Couple getting married"
                 width={300}
                 height={300}
                 className="rounded-lg shadow-lg w-full h-auto object-cover aspect-square"
