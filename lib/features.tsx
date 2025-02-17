@@ -15,12 +15,32 @@ import {
 
 export const FEATURES = [
   {
+    icon: <Heart className="w-full h-full" />,
+    title: "Love Letter AI Generator",
+    description:
+      "Craft heartfelt messages with the help of our AI writing assistant.",
+    ctaText: "Write Now",
+    isPremium: false,
+    iconColor: "text-red-500",
+    href: "/features/love-letter-generator",
+  },
+
+  {
+    icon: <MessageCircle className="w-full h-full" />,
+    title: "AI Chatbot Assistant",
+    description: "Get relationship support and conversation ideas from our AI.",
+    ctaText: "Chat Now",
+    isPremium: false,
+    iconColor: "text-blue-400",
+    href: "/features/chat",
+  },
+  {
     icon: <Calendar className="w-full h-full" />,
     title: "AI-Powered Date Ideas",
     description:
       "Get personalized virtual and real-life date suggestions based on your preferences.",
     ctaText: "Explore Ideas",
-    isPremium: false,
+    isPremium: true,
     iconColor: "text-green-400",
     href: "/features/date-ideas",
   },
@@ -30,7 +50,7 @@ export const FEATURES = [
     description:
       "Discover perfect streaming options for your next co-watching session.",
     ctaText: "Find Shows",
-    isPremium: false,
+    isPremium: true,
     iconColor: "text-red-400",
     href: "/features/movie-show-recommendations",
   },
@@ -40,7 +60,7 @@ export const FEATURES = [
     description:
       "Browse our curated list of interactive online games for couples.",
     ctaText: "Play Now",
-    isPremium: false,
+    isPremium: true,
     iconColor: "text-purple-400",
     href: "/features/games",
   },
@@ -50,19 +70,9 @@ export const FEATURES = [
     description:
       "Automatically sync schedules to find the best times to connect.",
     ctaText: "Sync Now",
-    isPremium: false,
+    isPremium: true,
     iconColor: "text-yellow-400",
     href: "/features/schedule-syncing",
-  },
-  {
-    icon: <MessageCircle className="w-full h-full" />,
-    title: "AI Chatbot Assistant",
-    description:
-      "Get relationship support, conversation ideas, and reminders from our AI.",
-    ctaText: "Chat Now",
-    isPremium: true,
-    iconColor: "text-blue-400",
-    href: "/features/chat",
   },
   {
     icon: <Gift className="w-full h-full" />,
@@ -73,16 +83,6 @@ export const FEATURES = [
     isPremium: true,
     iconColor: "text-pink-400",
     href: "/features/gift-finder",
-  },
-  {
-    icon: <Heart className="w-full h-full" />,
-    title: "Love Letter AI Generator",
-    description:
-      "Craft heartfelt messages with the help of our AI writing assistant.",
-    ctaText: "Write Now",
-    isPremium: true,
-    iconColor: "text-red-500",
-    href: "/features/love-letter-generator",
   },
   {
     icon: <Music className="w-full h-full" />,

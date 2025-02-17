@@ -4,25 +4,17 @@ import type React from "react"
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-
+import { FEATURES } from "@/lib/features"
 const PricingSection = () => {
-  const freeFeatures = [
-    "AI-Powered Date Ideas",
-    "Movie & Show Recommendations",
-    "Multiplayer Games",
-    "Time Zone & Schedule Syncing",
-  ]
+  const freeFeatures = FEATURES.filter((feature) => !feature.isPremium).map(
+    (feature) => feature.title
+  )
 
   const premiumFeatures = [
-    "Everything in Free tier",
-    "AI Chatbot Assistant",
-    "AI-Powered Gift Finder",
-    "Love Letter AI Generator",
-    "Shared Playlist Creator",
-    "Surprise & Challenge Generator",
-    "Virtual Travel Experiences",
-    "Shared Journal & Daily Prompts",
-    "Countdown & Memory Sharing",
+    "Everything in Free Tier",
+    ...FEATURES.filter((feature) => feature.isPremium).map(
+      (feature) => feature.title
+    ),
   ]
 
   return (

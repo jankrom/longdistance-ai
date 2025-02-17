@@ -4,7 +4,7 @@ import type React from "react"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
 import { Link as ScrollLink } from "react-scroll"
-import { Menu, Heart, User } from "lucide-react"
+import { Menu, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
